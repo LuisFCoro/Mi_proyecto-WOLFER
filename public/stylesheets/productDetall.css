@@ -1,0 +1,114 @@
+.dtl-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.dtl-producto-principal {
+    display: flex;
+    gap: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    align-items: flex-start;
+}
+
+.dtl-imagen {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ddd; /* Caja para la imagen */
+    padding: 5px;
+    background-color: #fafafa;
+    flex-shrink: 0;
+}
+
+.dtl-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Separación entre textos */
+}
+
+.dtl-nombre {
+    font-size: 2em;
+    color: #111;
+    margin: 0;
+}
+
+.dtl-precio {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #000;
+    margin: 0;
+}
+
+.dtl-descripcion {
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.dtl-info p strong {
+    color: #666;
+}
+
+.dtl-btn-agregar-carrito {
+    align-self: start;
+    background-color: #000;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.dtl-btn-agregar-carrito:hover {
+    background-color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form-agregar-carrito {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .boton-carrito {
+    background-color: #2ecc71;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+  }
+  
+  .boton-carrito:hover {
+    background-color: #27ae60;
+  }
+  

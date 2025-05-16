@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/productViews.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+
+
+<%- include('../partials/header') %>
+
+
+<main class="productos-container">
+  <% products.forEach(product => { %>
+    <div class="product-card">
+      <a href="/products/<%= product.id %>" class="product-card-link">
+        <img src="<%= product.imagen %>" alt="<%= product.nombre %>">
+        <div class="product-info">
+          <p class="marca"><%= product.marca %></p>
+          <h3><%= product.nombre %></h3>
+          <p class="precio">$<%= product.precio %></p>
+        </div>
+      </a>
+
+      <!-- Formulario para agregar al carrito -->
+      <form action="/cart/add/<%= product.id %>" method="POST" class="form-agregar-carrito">
+        <button type="submit" class="boton-carrito">
+          <i class="fas fa-cart-plus"></i> Añadir al carrito
+        </button>
+      </form>
+    </div>
+  <% }) %>
+</main>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer') %>
+
+
+
+<script>
+  function toggleMenu() {
+    const submenu = document.getElementById('submenu');
+    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+  }
+
+  // Ocultar el menú si se hace clic afuera
+  document.addEventListener('click', function(event) {
+    const menu = document.querySelector('.menu-cuenta');
+    const submenu = document.getElementById('submenu');
+
+    if (!menu.contains(event.target)) {
+      submenu.style.display = 'none';
+    }
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+body {
+    background-color: #111;
+    color: #f1f1f1;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .products-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+  }
+  
+  .products-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: black;
+  }
+  
+  .products-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .search-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    background-color: #333;
+    color: #f1f1f1;
+  }
+  
+  .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .create-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .create-btn:hover {
+    background-color: #3e8e41;
+  }
+  
+  .delete-btn {
+    background-color: #e53935;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c62828;
+  }
+  
+  .products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .product-card {
+    display: flex;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    transition: transform 0.2s;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .product-image {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+  }
+  
+  .product-details p {
+    margin: 4px 0;
+  }
+  
+  .product-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+  
+  .product-price,
+  .product-brand {
+    color: #ccc;
+  }
+  
+
+
+  .search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    color: #aaa;
+  }
+  
+  .search-input {
+    padding-left: 30px;
+  }
+  
+  .product-checkbox {
+    margin-right: 10px;
+    transform: scale(1.2);
+  }
+  

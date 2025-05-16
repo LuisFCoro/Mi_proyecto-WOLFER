@@ -1,0 +1,103 @@
+/* ========== CENTRADO Y CONTENEDOR ========== */
+.main-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Deja espacio para navbar y footer */
+    background-color: #eaeaea;
+    padding: 40px 20px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 700px;
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* ========== FORMULARIO ========== */
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    font-size: 1.8rem;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #cccccc;
+  }
+  
+  form label i {
+    margin-right: 6px;
+    color: #999;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-size: 1rem;
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    outline: none;
+    background-color: #333;
+  }
+  
+  /* ========== BOTONES ========== */
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .submit-btn,
+  .cancel-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .submit-btn:hover {
+    background-color: #dddddd;
+  }
+  
+  .cancel-btn {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #666;
+  }
+  
+  .submit-btn i,
+  .cancel-btn i {
+    margin-right: 6px;
+  }
+  

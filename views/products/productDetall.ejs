@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/productDetall.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <main class="dtl-container">
+    <section class="dtl-producto-principal">
+      <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>" class="dtl-imagen" />
+  
+      <div class="dtl-info">
+        <h1 class="dtl-nombre"><%= producto.nombre %></h1>
+        <p class="dtl-precio">$<%= producto.precio %></p>
+        <p class="dtl-descripcion"><%= producto.descripcion || 'No hay descripción disponible' %></p>
+        <p><strong>Marca:</strong> <%= producto.marca %></p>
+        <p><strong>Colección:</strong> <%= producto.coleccion %></p>
+        <p><strong>Etiquetas:</strong> <%= Array.isArray(producto.etiquetas) ? producto.etiquetas.join(', ') : 'Sin etiquetas' %></p>
+  
+        <button class="dtl-btn-agregar-carrito">Añadir al carrito</button>
+      </div>
+    </section>
+  </main>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <%- include('../partials/footer') %>
+
+
+
+
+
+
+
+    <script>
+      function toggleMenu() {
+        const submenu = document.getElementById('submenu');
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      }
+    
+      // Ocultar el menú si se hace clic afuera
+      document.addEventListener('click', function(event) {
+        const menu = document.querySelector('.menu-cuenta');
+        const submenu = document.getElementById('submenu');
+    
+        if (!menu.contains(event.target)) {
+          submenu.style.display = 'none';
+        }
+      });
+    </script>
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 4,
+    "nombre": "Motosierra",
+    "precio": 789,
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_834318-MLA46887988196_072021-T.webp",
+    "descripcion": "wdadawd",
+    "marca": "GARDENA",
+    "etiquetas": [
+      "HOT-SALE"
+    ],
+    "coleccion": "jardineria"
+  }
+]

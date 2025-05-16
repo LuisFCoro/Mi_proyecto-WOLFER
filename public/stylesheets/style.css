@@ -1,0 +1,297 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Barra de navegación superior (navbar-top) */
+.navbar-top {
+  background-color: #111;
+  color: white;
+
+  padding: 15px 0px;
+}
+
+.navbar-top .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links-top {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links-top a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links-top a:hover {
+  color: #ddd;
+}
+
+/* Barra de navegación inferior (navbar-bottom) */
+.navbar-bottom {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.nav-links-bottom {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav-links-bottom a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links-bottom a:hover {
+  color: #ddd;
+}
+
+/* Sección principal (hero) */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #eaeaea;
+  flex:1;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+}
+
+.menu-cuenta {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+  list-style: none;
+}
+
+.submenu li {
+  padding: 5px 0;
+}
+
+.submenu li a {
+  color: black;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  text-decoration: underline;
+}
+
+/* Fondo completo */
+.navbar-top {
+  background-color: #111;
+  color: white;
+  padding: 15px 0; /* sin padding lateral acá */
+}
+
+.navbar-bottom {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.header-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px; /* Opcional: un poco de espacio interno */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* Centrar los links del navbar-bottom */
+.navbar-bottom .header-container {
+  justify-content: center;
+}
+
+/* Espaciado visual para separar logo de los links */
+.navbar-top .logo {
+  margin-right: auto;
+}
+
+.logo{
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+  background-color: #111;
+  color: #eee;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+}
+
+.footer-logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-section h4 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: white;
+}
+
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subscribe-form input[type="email"] {
+  padding: 10px;
+  border: none;
+  background: #222;
+  color: #eee;
+}
+
+.subscribe-form button {
+  padding: 10px;
+  border: none;
+  background: white;
+  color: #111;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.subscribe-form button:hover {
+  background: #ccc;
+}
+
+.payment-icons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.payment-icons img {
+  height: 24px;
+  filter: grayscale(1) brightness(0.9);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 14px;
+  color: #888;
+}
+
+.footer-container {
+  max-width: 1500px;
+  margin: 0 auto;
+}

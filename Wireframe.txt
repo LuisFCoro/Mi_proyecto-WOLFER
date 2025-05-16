@@ -1,0 +1,12 @@
+Presentación del Wireframe del Proyecto Desafio Profesional Full Stack
+
+Me complace presentar el wireframe, una representación esquemática que define la estructura y funcionalidad
+de la interfaz de usuario. Este wireframe actúa como un plano esencial, delineando la disposición de los elementos clave, como menús
+de navegación, áreas de contenido y componentes interactivos, sin enfocarse en aspectos estéticos como colores o tipografías. 
+Su propósito es proporcionar una visión clara de la arquitectura del sitio, facilitando la planificación y el desarrollo eficiente 
+del proyecto.
+
+Actualmente mi proyecto está actualmente en desarrollo. Es posible que algunas funcionalidades no estén completas o presenten cambios 
+frecuentes.Agradezco su comprensión y paciencia mientras trabajo para entregar una versión final de calidad.
+
+---> https://www.figma.com/design/0rIVF5Ztztdf05QnGYYeJz/Untitled?node-id=0-1&t=wjDKA1mnAVjEDIvo-1

@@ -1,0 +1,49 @@
+<header class="mi-header">
+
+    <!-- Primer Nav (principal) -->
+    <nav class="navbar-top">
+      <div class="header-container">
+        <div class="logo"><a href="/">WOLFER</a></div>
+        <ul class="nav-links-top">
+          <li><a href="#">Sucursales</a></li>
+          <li class="menu-cuenta">
+            <a href="#" onclick="toggleMenu()">Mi Cuenta</a>
+            <ul id="submenu" class="submenu">
+              <% if (!usuarioLogueado) { %>
+                <li><a href="/users/login">Iniciar sesión</a></li>
+                <li><a href="/users/register">Registrarse</a></li>
+              <% } else { %>
+                <li><strong>¡Hola, <%= usuarioLogueado.nombre %>!</strong></li>
+                <% if (usuarioLogueado.rol === 'admin') { %>
+                  <li><a href="#">Configuración</a></li>
+                  <li><a href="/admin/products">Mis productos</a></li>
+                <% } else { %>
+                  <li><a href="#">Mi perfil</a></li>
+                  <li><a href="#">Mis compras</a></li>
+                  <li><a href="#">Favoritos</a></li>
+                  <li><a href="#">Ayuda</a></li>
+                <% } %>
+                <li><a href="/users/logout">Cerrar sesión</a></li>
+              <% } %>
+            </ul>
+          </li>
+          <li><a href="#">Carrito</a></li>
+        </ul>
+      </div>
+    </nav>
+  
+    <!-- Segundo Nav (categorías) -->
+    <nav class="navbar-bottom">
+      <div class="header-container nav-bottom-container">
+        <ul class="nav-links-bottom">
+          <li><a href="/products">Productos</a></li>
+          <li><a href="#">Marcas</a></li>
+          <li><a href="#">Herramientas</a></li>
+          <li><a href="#">Ofertas</a></li>
+          <li><a href="#">Novedades</a></li>
+        </ul>
+      </div>
+    </nav>
+  
+  </header>
+  
