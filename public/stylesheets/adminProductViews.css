@@ -1,129 +1,171 @@
-body {
-    background-color: #111;
-    color: #f1f1f1;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  .products-container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 20px;
-  }
-  
-  .products-title {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 30px;
-    color: black;
-  }
-  
-  .products-actions {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .search-input {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    width: 200px;
-    background-color: #333;
-    color: #f1f1f1;
-  }
-  
-  .btn {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s ease;
-  }
-  
-  .create-btn {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .create-btn:hover {
-    background-color: #3e8e41;
-  }
-  
-  .delete-btn {
-    background-color: #e53935;
-    color: white;
-  }
-  
-  .delete-btn:hover {
-    background-color: #c62828;
-  }
-  
-  .products-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .product-card {
-    display: flex;
-    align-items: center;
-    background-color: #1e1e1e;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #444;
-    transition: transform 0.2s;
-  }
-  
-  .product-card:hover {
-    transform: scale(1.02);
-  }
-  
-  .product-image {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    margin-right: 15px;
-    border-radius: 5px;
-  }
-  
-  .product-details p {
-    margin: 4px 0;
-  }
-  
-  .product-name {
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #fff;
-  }
-  
-  .product-price,
-  .product-brand {
-    color: #ccc;
-  }
-  
+.admin-main {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  color: #111;
+  font-family: sans-serif;
+}
+
+.admin-main h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: #000;
+}
+
+/* Buscador + botones */
+.actions-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.actions-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+.btn-create {
+  background-color: #2e86de;
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: #111;
+  color: #fff;
+}
+
+/* Tabla de productos */
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+    max-width: 100%;
+  table-layout: auto;
+}
+
+.products-table thead {
+  background-color: #eee;
+  color: #000;
+}
+
+.products-table th,
+.products-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  width: 20%; /* Distribución equitativa */
+}
+
+.products-table th:nth-child(1),
+.products-table td:nth-child(1) {
+  width: 15%; /* Imagen */
+  text-align: center;
+}
+
+.products-table th:nth-child(2),
+.products-table td:nth-child(2) {
+  width: 25%; /* Producto */
+}
+
+.products-table th:nth-child(3),
+.products-table td:nth-child(3) {
+  width: 20%; /* Marca */
+}
+
+.products-table th:nth-child(4),
+.products-table td:nth-child(4) {
+  width: 15%; /* Precio */
+}
+
+.products-table th:nth-child(5),
+.products-table td:nth-child(5) {
+  width: auto;
+  text-align: center;
+  white-space: nowrap;
+}  /* Accion */
 
 
-  .search-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-icon {
-    position: absolute;
-    left: 10px;
-    color: #aaa;
-  }
-  
-  .search-input {
-    padding-left: 30px;
-  }
-  
-  .product-checkbox {
-    margin-right: 10px;
-    transform: scale(1.2);
-  }
-  
+.product-img {
+  width: 60px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.no-img {
+  color: #777;
+  font-style: italic;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.btn-icon.delete {
+  color: #c0392b;
+}
+
+.form-inline {
+  display: inline;
+}
+
+/* Mensaje vacío */
+.empty-msg {
+  text-align: center;
+  padding: 1rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Botón grande de crear */
+.btn-create.big {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-create.big:hover {
+  background-color: #218838;
+}
+
+
+
+
+
+
+
+

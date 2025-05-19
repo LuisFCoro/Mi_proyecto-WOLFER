@@ -6,27 +6,33 @@
         <div class="logo"><a href="/">WOLFER</a></div>
         <ul class="nav-links-top">
           <li><a href="#">Sucursales</a></li>
-          <li class="menu-cuenta">
-            <a href="#" onclick="toggleMenu()">Mi Cuenta</a>
-            <ul id="submenu" class="submenu">
-              <% if (!usuarioLogueado) { %>
-                <li><a href="/users/login">Iniciar sesión</a></li>
-                <li><a href="/users/register">Registrarse</a></li>
-              <% } else { %>
-                <li><strong>¡Hola, <%= usuarioLogueado.nombre %>!</strong></li>
-                <% if (usuarioLogueado.rol === 'admin') { %>
-                  <li><a href="#">Configuración</a></li>
-                  <li><a href="/admin/products">Mis productos</a></li>
-                <% } else { %>
-                  <li><a href="#">Mi perfil</a></li>
-                  <li><a href="#">Mis compras</a></li>
-                  <li><a href="#">Favoritos</a></li>
-                  <li><a href="#">Ayuda</a></li>
-                <% } %>
-                <li><a href="/users/logout">Cerrar sesión</a></li>
-              <% } %>
-            </ul>
-          </li>
+<li class="menu-cuenta">
+  <a href="#" onclick="toggleMenu()">Mi Cuenta</a>
+  <ul id="submenu" class="submenu">
+    <% if (!usuarioLogueado) { %>
+      <li><a href="/users/login">Iniciar sesión</a></li>
+      <li><a href="/users/register">Registrarse</a></li>
+    <% } else { %>
+      <li class="user-info">
+        <img src="<%= usuarioLogueado.avatar || '/images/default-avatar.png' %>" alt="Avatar de <%= usuarioLogueado.nombre %>" class="avatar-img" />
+        <span class="user-name">¡Hola, <%= usuarioLogueado.nombre %>!</span>
+      </li>
+      <% if (usuarioLogueado.rol === 'admin') { %>
+        <li><a href="#">Configuración</a></li>
+        <li><a href="/admin/products">Mis productos</a></li>
+        <li><a href="/admin/pedidos">Mis pedidos</a></li>
+        <li><a href="/admin/persmisos">Mis permisos</a></li>
+        <li><a href="/admin/configuracion">Configuración</a></li>
+      <% } else { %>
+        <li><a href="#">Mi perfil</a></li>
+        <li><a href="#">Mis compras</a></li>
+        <li><a href="#">Ayuda</a></li>
+      <% } %>
+      <li><a href="/users/logout">Cerrar sesión</a></li>
+    <% } %>
+  </ul>
+</li>
+
           <li><a href="#">Carrito</a></li>
         </ul>
       </div>
@@ -37,7 +43,7 @@
       <div class="header-container nav-bottom-container">
         <ul class="nav-links-bottom">
           <li><a href="/products">Productos</a></li>
-          <li><a href="#">Marcas</a></li>
+          <li><a href="/products/marcas">Marcas</a></li>
           <li><a href="#">Herramientas</a></li>
           <li><a href="#">Ofertas</a></li>
           <li><a href="#">Novedades</a></li>
@@ -47,3 +53,21 @@
   
   </header>
   
+  
+    <script>
+      function toggleMenu() {
+        const submenu = document.getElementById('submenu');
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      }
+    
+      // Ocultar el menú si se hace clic afuera
+      document.addEventListener('click', function(event) {
+        const menu = document.querySelector('.menu-cuenta');
+        const submenu = document.getElementById('submenu');
+    
+        if (!menu.contains(event.target)) {
+          submenu.style.display = 'none';
+        }
+      });
+    </script>
+    

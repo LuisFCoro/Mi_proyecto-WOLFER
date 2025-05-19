@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/adminProductViews.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+
+
+<%- include('../partials/header') %>
+
+
+
+
+<main class="admin-main">
+  <h2>Mis Productos</h2>
+
+  <div class="actions-bar">
+    <input type="text" placeholder="Buscar por nombre o marca..." class="search-input" />
+
+    <div class="actions-buttons">
+      <a href="/admin/products/create" class="btn btn-create big">
+        <i class="fas fa-plus"></i> Crear producto
+      </a>
+    </div>
+  </div>
+
+  <table class="products-table">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Producto</th>
+        <th>Marca</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (productos.length > 0) { %>
+        <% productos.forEach(product => { %>
+          <tr>
+            <td>
+              <% if (product.imagen) { %>
+                <img src="<%= product.imagen %>" alt="<%= product.nombre %>" class="product-img">
+              <% } else { %>
+                <span class="no-img">Sin imagen</span>
+              <% } %>
+            </td>
+            <td><%= product.nombre %></td>
+            <td><%= product.marca %></td>
+            <td>$<%= (product.precio != null && !isNaN(product.precio)) ? product.precio.toFixed(2) : '0.00' %></td>
+            <td>
+              <a href="/admin/products/<%= product.id %>/edit" class="btn-icon"><i class="fas fa-edit"></i></a>
+              <form action="/admin/products/<%= product.id %>/delete" method="POST" class="form-inline" onsubmit="return confirm('¿Eliminar este producto?')">
+                <button type="submit" class="btn-icon delete"><i class="fas fa-trash-alt"></i></button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr>
+          <td colspan="5" class="empty-msg">No hay productos para mostrar.</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</main>
+
+
+
+
+
+
+
+
+<%- include('../partials/footer') %>
+
+
+
+
+
+
+<script>
+  const searchInput = document.querySelector('.search-input');
+  const tableRows = document.querySelectorAll('.products-table tbody tr');
+
+  searchInput.addEventListener('input', function () {
+    const searchTerm = this.value.toLowerCase();
+
+    tableRows.forEach(row => {
+      const nombre = row.querySelector('td:nth-child(2)').innerText.toLowerCase();
+      const marca = row.querySelector('td:nth-child(3)').innerText.toLowerCase();
+
+      if (nombre.includes(searchTerm) || marca.includes(searchTerm)) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

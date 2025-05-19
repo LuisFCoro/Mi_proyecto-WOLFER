@@ -30,25 +30,24 @@
 
 
 
+<main class="detalle-wrapper">
+  <section class="detalle-card">
+    <div class="detalle-imagen-wrapper">
+      <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>" class="detalle-imagen" />
+    </div>
 
+    <div class="detalle-info">
+      <h1 class="detalle-nombre"><i class="fas fa-box-open"></i> <%= producto.nombre %></h1>
+      <p class="detalle-precio"> $<%= producto.precio %></p>
+      <p class="detalle-descripcion"><i class="fas fa-align-left"></i> <%= producto.descripcion || 'No hay descripción disponible' %></p>
+      <p><i class="fas fa-tags"></i> <strong>Marca:</strong> <%= producto.marca %></p>
+      <p><i class="fas fa-layer-group"></i> <strong>Colección:</strong> <%= producto.coleccion %></p>
+      <p><i class="fas fa-hashtag"></i> <strong>Etiquetas:</strong> <%= Array.isArray(producto.etiquetas) ? producto.etiquetas.join(', ') : 'Sin etiquetas' %></p>
 
-  <main class="dtl-container">
-    <section class="dtl-producto-principal">
-      <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>" class="dtl-imagen" />
-  
-      <div class="dtl-info">
-        <h1 class="dtl-nombre"><%= producto.nombre %></h1>
-        <p class="dtl-precio">$<%= producto.precio %></p>
-        <p class="dtl-descripcion"><%= producto.descripcion || 'No hay descripción disponible' %></p>
-        <p><strong>Marca:</strong> <%= producto.marca %></p>
-        <p><strong>Colección:</strong> <%= producto.coleccion %></p>
-        <p><strong>Etiquetas:</strong> <%= Array.isArray(producto.etiquetas) ? producto.etiquetas.join(', ') : 'Sin etiquetas' %></p>
-  
-        <button class="dtl-btn-agregar-carrito">Añadir al carrito</button>
-      </div>
-    </section>
-  </main>
-  
+      <button class="detalle-btn"><i class="fas fa-cart-plus"></i> Añadir al carrito</button>
+    </div>
+  </section>
+</main>
 
 
 

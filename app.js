@@ -9,6 +9,9 @@ var app = express();
 
 // sesion midlleaware usuario
 const { sessionConfig, userToLocals } = require('./middlewares/sessionMiddleware');
+
+// Primero el cookieParser
+app.use(cookieParser());
 // Configuración de middlewares
 app.use(sessionConfig);
 app.use(userToLocals);
@@ -20,7 +23,7 @@ app.use(userToLocals);
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let productsRouter = require('./routes/products');
-const adminRoutes = require('./routes/admin');
+const adminRouter = require('./routes/admin');
 
 
 
@@ -29,6 +32,19 @@ const adminRoutes = require('./routes/admin');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // Hasta aca
+
+
+
+
+
+
+
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
+
+
+
+
+
 
 
 
@@ -46,7 +62,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-app.use('/admin', adminRoutes);
+app.use('/admin', adminRouter);
 
 
 

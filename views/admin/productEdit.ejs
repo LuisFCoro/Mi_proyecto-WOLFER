@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/adminProductEdit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+
+
+
+<div class="main-form-wrapper">
+  <div class="container">
+    <h1><i class="fas fa-edit"></i> Editar Producto</h1>
+
+    <form action="/admin/products/<%= producto.id %>" method="POST" enctype="multipart/form-data">
+      
+      <label for="nombre"><i class="fas fa-tag"></i> Nombre:</label>
+      <input type="text" id="nombre" name="nombre" value="<%= producto.nombre %>" required>
+
+      <label for="precio"><i class="fas fa-dollar-sign"></i> Precio:</label>
+      <input type="number" id="precio" name="precio" value="<%= producto.precio %>" step="0.01" required>
+
+      <label for="imagenFile"><i class="fas fa-upload"></i> Cambiar Imagen:</label>
+      <input type="file" id="imagenFile" name="imagenFile" accept="image/*">
+
+      <label for="imagen"><i class="fas fa-image"></i> O ingresa una URL:</label>
+      <input type="text" id="imagen" name="imagen" value="<%= producto.imagen %>">
+
+      <label for="descripcion"><i class="fas fa-align-left"></i> Descripción:</label>
+      <textarea id="descripcion" name="descripcion" rows="4"><%= producto.descripcion %></textarea>
+
+      <label for="marca"><i class="fas fa-industry"></i> Marca:</label>
+      <input type="text" id="marca" name="marca" value="<%= producto.marca %>">
+
+      <label for="etiquetas"><i class="fas fa-tags"></i> Etiquetas (separadas por coma):</label>
+      <input type="text" id="etiquetas" name="etiquetas" value="<%= producto.etiquetas ? producto.etiquetas.join(', ') : '' %>">
+
+      <label for="coleccion"><i class="fas fa-layer-group"></i> Colección:</label>
+      <input type="text" id="coleccion" name="coleccion" value="<%= producto.coleccion %>">
+
+      <div class="form-buttons">
+        <button type="submit" class="submit-btn"><i class="fas fa-save"></i> Actualizar Producto</button>
+        <a href="/admin/products" class="cancel-btn"><i class="fas fa-times"></i> Cancelar</a>
+      </div>
+    </form>
+
+    <form action="/admin/delete/<%= producto.id %>" method="POST" style="margin-top: 1.5rem;">
+      <button type="submit" class="submit-btn" style="width: 100%; background-color: #b00020; color: white;" onclick="return confirm('¿Estás seguro que querés eliminar este producto?')">
+        <i class="fas fa-trash-alt"></i> Eliminar Producto
+      </button>
+    </form>
+  </div>
+</div>
+
+
+  
+
+  <%- include('../partials/footer') %>
+
+
+
+
+
+
+
+    <script>
+      function toggleMenu() {
+        const submenu = document.getElementById('submenu');
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      }
+    
+      // Ocultar el menú si se hace clic afuera
+      document.addEventListener('click', function(event) {
+        const menu = document.querySelector('.menu-cuenta');
+        const submenu = document.getElementById('submenu');
+    
+        if (!menu.contains(event.target)) {
+          submenu.style.display = 'none';
+        }
+      });
+    </script>
+    
+
+
+</body>
+</html>

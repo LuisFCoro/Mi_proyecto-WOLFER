@@ -30,100 +30,39 @@ function guardarProductos(productos) {
 const productsController = {
         index: (req, res) => {
             const productos = leerProductos();
-            res.render('products/admin.ejs', { productos }); // 🔁 acá
+            res.render('products/productViews', { products: productos });
         },
 
-  create: (req, res) => {             // Formulario para crear productos
-    res.render('products/productAdd');
+             // Muestra el detalle de un producto
+show: (req, res) => {
+  const productos = leerProductos();
+  const id = parseInt(req.params.id);
+  const producto = productos.find(p => p.id === id);
+
+  if (producto) {
+    res.render('products/productDetall', { producto });
+  } else {
+    res.status(404).send('Producto no encontrado');
+  }
 },
 
-  store: (req, res) => {              // Guarda un nuevo producto
-    const productos = leerProductos();
+marcas: (req, res) => {
+  const productos = leerProductos();
 
-    const nuevoProducto = {
-        id: productos.length + 1,
-        nombre: req.body.nombre,
-        precio: parseFloat(req.body.precio),
-        imagen: req.body.imagen || '', // en caso de que no pongan imagen
-        descripcion: req.body.descripcion || '',
-        marca: req.body.marca || '',
-        etiquetas: req.body.etiquetas ? req.body.etiquetas.split(',').map(e => e.trim()) : [],
-        coleccion: req.body.coleccion || ''
-    };
+  // Agrupar por marca automáticamente
+  const productosPorMarca = {};
 
-    productos.push(nuevoProducto);
-    guardarProductos(productos);
-
-    res.redirect('/products');
-    },
-
-  show: (req, res) => {              // Muestra el detalle de un producto
-    const productos = leerProductos();
-    const id = parseInt(req.params.id);
-    const producto = productos.find(p => p.id === id);
-
-    if (producto) {
-        res.send(`
-            <h1>${producto.nombre}</h1>
-            <p><strong>Precio:</strong> $${producto.precio}</p>
-            <p><strong>Descripción:</strong> ${producto.descripcion}</p>
-            <p><strong>Marca:</strong> ${producto.marca}</p>
-            <p><strong>Colección:</strong> ${producto.coleccion}</p>
-            <p><strong>Etiquetas:</strong> ${Array.isArray(producto.etiquetas) ? producto.etiquetas.join(', ') : 'Sin etiquetas'}</p>
-            ${producto.imagen ? `<img src="${producto.imagen}" alt="${producto.nombre}" width="200">` : ''}
-        `);
-    } else {
-        res.send('Producto no encontrado');
+  productos.forEach(producto => {
+    const marca = producto.marca || 'Sin marca'; // fallback por si falta el campo
+    if (!productosPorMarca[marca]) {
+      productosPorMarca[marca] = [];
     }
-    },
+    productosPorMarca[marca].push(producto);
+  });
 
-    edit: (req, res) => {                             // funcion para mostrar formulario de los datos actuales del producto
-        const productos = leerProductos();
-        const id = parseInt(req.params.id);
-        const producto = productos.find(p => p.id === id);
-    
-        if (producto) {
-            res.render('products/productEdit', { producto });
-        } else {
-            res.send('Producto no encontrado');
-        }
-    },
+  res.render('products/marcas', { productosPorMarca });
+}
 
-    update: (req, res) => {                     //funcion para guardar los datos cambiados de los productos
-        const productos = leerProductos();
-        const id = parseInt(req.params.id);
-    
-        const productoIndex = productos.findIndex(p => p.id === id);
-    
-        if (productoIndex !== -1) {
-            productos[productoIndex] = {
-                ...productos[productoIndex], // conserva los datos viejos
-                nombre: req.body.nombre,
-                precio: parseFloat(req.body.precio),
-                imagen: req.body.imagen,
-                descripcion: req.body.descripcion,
-                marca: req.body.marca,
-                etiquetas: req.body.etiquetas ? req.body.etiquetas.split(',').map(e => e.trim()) : [],
-                coleccion: req.body.coleccion
-            };
-    
-            guardarProductos(productos);
-            res.redirect('/products');
-        } else {
-            res.send('Producto no encontrado');
-        }
-    },
-
-    destroy: (req, res) => {
-        const id = parseInt(req.params.id);
-        let productos = leerProductos();
-        productos = productos.filter(p => p.id !== id);
-        guardarProductos(productos);
-        res.redirect('/products');
-    }
-    
-    
-    
 };
 
 module.exports = productsController;

@@ -1,14 +1,86 @@
 [
   {
-    "id": 4,
-    "nombre": "Motosierra",
-    "precio": 789,
-    "imagen": "https://http2.mlstatic.com/D_Q_NP_2X_834318-MLA46887988196_072021-T.webp",
-    "descripcion": "wdadawd",
+    "id": 5,
+    "nombre": "Robot cortacésped Gardena SILENO minimo, 500m²",
+    "precio": 2534610,
+    "imagen": "/uploads/1747620497295-420899934-1520259.png",
+    "descripcion": "Un pequeño y potente ayudante de jardín silencioso, versátil e inteligente: así es el robot cortacésped SILENO minimo 500 m² de GARDENA. El SILENO minimo es ideal para céspedes pequeños, ya que combina alto rendimiento y precisión con un corte cómodo. ¡Empecemos! Tome su teléfono inteligente y use la aplicación GARDENA Bluetooth® para ingresar el tamaño del césped, los días de corte deseados y la hora de inicio preferida.",
     "marca": "GARDENA",
     "etiquetas": [
-      "HOT-SALE"
+      "Ofertas"
     ],
-    "coleccion": "jardineria"
+    "coleccion": "novedades"
+  },
+  {
+    "id": 6,
+    "nombre": "Tijera Gardena PremiumCut-Flex Verde",
+    "precio": 32910,
+    "imagen": "/uploads/1747621663001-938230743-image67f036e7ec87f-1224220.png",
+    "descripcion": "Gran rendimiento y fácil manejo. La solución inteligente para cortar sin esfuerzo: las tijeras de podar PremiumCut Flex de GARDENA ofrecen una potencia de corte excepcional con un diámetro de corte de 24 mm, cortador de alambre, ranura para savia, PowerCoating y una apertura variable en 2 pasos para mayor comodidad, independientemente del tamaño de la mano.",
+    "marca": "GARDENA",
+    "etiquetas": [
+      "Ofertas"
+    ],
+    "coleccion": "novedades"
+  },
+  {
+    "id": 7,
+    "nombre": "Tijera Recortasetos Gardena Telecut",
+    "precio": 85230,
+    "imagen": "https://cdn.rumbosrl.com.ar/uploads/products/images/large/1230420.png",
+    "descripcion": "El cortasetos Telecut de GARDENA puede incrementar el alcance hasta en 20 cm. Esto te evita tener que estirarte o subir a una escalera. A pesar de que se extienda no perderás ni un ápice de la fuerza que ejerce. Las cuchillas son dentadas para cortar en grandes extensiones con gran eficiencia.",
+    "marca": "GARDENA",
+    "etiquetas": [
+      "Ofertas"
+    ],
+    "coleccion": "novedades"
+  },
+  {
+    "id": 8,
+    "nombre": "Pala Cuadrada ErgoLine Gardena",
+    "precio": 134560,
+    "imagen": "/uploads/1747623838157-192623529-1701020.png",
+    "descripcion": "La Pala Cuadrada Ergoline de GARDENA es una herramienta para cavar, mover y transportar la tierra de forma sencilla. Su agarre en forma de D extra ancho se puede sujetar con las dos manos desde cualquier punto para facilitarte el trabajo.",
+    "marca": "GARDENA",
+    "etiquetas": [
+      "Ofertas"
+    ],
+    "coleccion": "novedades"
+  },
+  {
+    "id": 9,
+    "nombre": "Motosierra Husqvarna",
+    "precio": 2123,
+    "imagen": "https://cdn.rumbosrl.com.ar/uploads/products/images/large/7082488.png",
+    "descripcion": "awdawdawdwadwadawdaddddddddddddddddddwad",
+    "marca": "NIWA",
+    "etiquetas": [
+      "Ofertas"
+    ],
+    "coleccion": "novedades"
+  },
+  {
+    "id": 10,
+    "nombre": "Manguera Gardena Classic 1/2",
+    "precio": 42370,
+    "imagen": "/uploads/1747625253815-764207426-1800220.png",
+    "descripcion": "Manguera Classic GARDENA. Manguera de jardín de PVC, resistente a la presión e indeformable con refuerzo de primera calidad. Sin plastificantes nocivos ni metales pesados. Resistente a los rayos Uva.",
+    "marca": "GARDENA",
+    "etiquetas": [
+      "Ofertas"
+    ],
+    "coleccion": "novedades"
+  },
+  {
+    "id": 11,
+    "nombre": "HUSQVARNA TS 138L",
+    "precio": 2363456,
+    "imagen": "/uploads/1747625989117-701657105-RR_0410439-1-36aae8e29570320640f2d02c68de82e4.png",
+    "descripcion": "TS 138L es el tractor cortacésped de Husqvarna sencillo de manejar. Se ha desarrollo para los propietarios de jardines pequeños o de tamaño medio. Eficiente, con descarga lateral, diseño inteligente y gran ergonomía. El TS 138L está equipado con un potente motor con arranque sin estrangulamiento, transmisión hidrostática accionada por pedal y volante ergonómico.",
+    "marca": "HUSQVARNA",
+    "etiquetas": [
+      "Ofertas"
+    ],
+    "coleccion": "novedades"
   }
 ]

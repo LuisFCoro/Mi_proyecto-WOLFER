@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/marcas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+
+
+<main class="marcas-container">
+  <% for (let marca in productosPorMarca) { %>
+    <section class="marca-seccion">
+      <h2 class="marca-titulo"><%= marca %></h2>
+      <div class="productos-grid">
+        <% productosPorMarca[marca].forEach(producto => { %>
+          <a href="/products/<%= producto.id %>" class="producto-card">
+            <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>" class="producto-img" />
+            <div class="producto-detalle">
+              <h3><i class="fas fa-tag"></i> <%= producto.nombre %></h3>
+              <p class="precio"><i class="fas fa-dollar-sign"></i> <%= producto.precio %></p>
+              <span class="etiqueta-marca"></i> <%= producto.marca %></span>
+            </div>
+          </a>
+        <% }) %>
+      </div>
+    </section>
+  <% } %>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <%- include('../partials/footer') %>
+
+
+    <script>
+      function toggleMenu() {
+        const submenu = document.getElementById('submenu');
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      }
+    
+      // Ocultar el menú si se hace clic afuera
+      document.addEventListener('click', function(event) {
+        const menu = document.querySelector('.menu-cuenta');
+        const submenu = document.getElementById('submenu');
+    
+        if (!menu.contains(event.target)) {
+          submenu.style.display = 'none';
+        }
+      });
+    </script>
+    
+
+
+
+
+</body>
+</html>

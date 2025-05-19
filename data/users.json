@@ -4,13 +4,15 @@
     "nombre": "luis",
     "email": "luiscoro514@gmail.com",
     "password": "luiscoro514@gmail.com",
-    "rol": "admin"
+    "rol": "admin",
+    "avatar": "/avatars/1747612993672-20240731_183658-min.jpg"
   },
   {
     "id": 2,
-    "nombre": "Fernando",
+    "nombre": "Luis Fernando",
     "email": "luiyicoro@gmail.com",
-    "password": "123456",
-    "rol": "cliente"
+    "password": "123ABCdd.",
+    "rol": "cliente",
+    "avatar": "/avatars/1747625611610-image_1024.jpg"
   }
 ]

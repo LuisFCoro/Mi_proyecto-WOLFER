@@ -1,13 +1,61 @@
-<h2>Registrarse</h2>
-<form method="POST" action="/users/register">
-    <label>Nombre:</label>
-    <input type="text" name="nombre" required>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registro de Usuario</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/register.css">
+</head>
+<body>
 
-    <label>Email:</label>
-    <input type="email" name="email" required>
 
-    <label>Contraseña:</label>
-    <input type="password" name="password" required>
+  <%- include('../partials/header') %>
 
-    <button type="submit">Registrarse</button>
-</form>
+
+
+
+
+<main class="main-form-wrapper">
+  <div class="container">
+    <h1>Registrarse</h1>
+
+    <% if (typeof errores !== 'undefined' && errores.length > 0) { %>
+      <ul class="errores">
+        <% errores.forEach(error => { %>
+          <li><%= error %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+    <form action="/users/register" method="POST" enctype="multipart/form-data" novalidate>
+      <label for="nombre"><i class="fa fa-user"></i> Nombre y Apellido:</label>
+      <input type="text" name="nombre" id="nombre" value="<%= old?.nombre || '' %>" required minlength="2" class="<%= errores && errores.includes('El nombre debe tener al menos 2 caracteres') ? 'input-error' : '' %>">
+
+      <label for="email"><i class="fa fa-envelope"></i> Correo electrónico:</label>
+      <input type="email" name="email" id="email" value="<%= old?.email || '' %>" required class="<%= errores && errores.includes('El correo electrónico no es válido') ? 'input-error' : '' %>">
+
+      <label for="password"><i class="fa fa-lock"></i> Contraseña:</label>
+      <input type="password" name="password" id="password" required minlength="8" class="<%= errores && errores.includes('La contraseña debe tener al menos 8 caracteres, mayúsculas, minúsculas, números y símbolos') ? 'input-error' : '' %>">
+      <small>Mínimo 8 caracteres, con mayúscula, minúscula, número y símbolo.</small>
+
+      <label for="avatar"><i class="fa fa-image"></i> Imagen de perfil (opcional):</label>
+      <input type="file" name="avatar" id="avatar" accept="image/*">
+
+      <div class="form-buttons">
+        <button type="submit" class="submit-btn"><i class="fa fa-user-plus"></i> Registrarme</button>
+      </div>
+    </form>
+
+    <p>¿Ya tenés cuenta? <a href="/users/login">Iniciar sesión</a></p>
+  </div>
+</main>
+
+
+
+
+  <%- include('../partials/footer') %>
+
+
+</body>
+</html>

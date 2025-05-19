@@ -11,14 +11,13 @@ body {
   color: #333;
 }
 
-/* Barra de navegación superior (navbar-top) */
 .navbar-top {
   background-color: #111;
   color: white;
-
-  padding: 15px 0px;
+  padding: 15px 20px; /* padding lateral para separar de bordes */
+  width: 100%; /* que ocupe todo el ancho */
+  box-sizing: border-box; /* para que el padding no aumente ancho */
 }
-
 .navbar-top .logo {
   font-size: 24px;
   font-weight: bold;
@@ -82,7 +81,6 @@ body {
   font-size: 18px;
   color: #555;
 }
-
 .menu-cuenta {
   position: relative;
 }
@@ -90,69 +88,92 @@ body {
 .submenu {
   display: none;
   position: absolute;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 10px;
   top: 100%;
   right: 0;
-  z-index: 10;
-  list-style: none;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  width: 240px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  padding: 15px 20px;
+  z-index: 1000;
 }
 
-.submenu li {
-  padding: 5px 0;
+.submenu.show {
+  display: block;
 }
 
+
+/* Usuario info con imagen y nombre */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 12px;
+}
+
+/* Imagen avatar */
+.user-info .avatar-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  margin-right: 12px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  object-fit: cover;
+}
+
+/* Nombre usuario */
+.user-info .user-name {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Estilos para los links dentro del submenu */
 .submenu li a {
-  color: black;
+  color: #ccc;
+  display: block;
+  padding: 8px 0;
   text-decoration: none;
+  transition: color 0.2s ease;
+  border-radius: 4px;
 }
 
 .submenu li a:hover {
-  text-decoration: underline;
-}
-
-/* Fondo completo */
-.navbar-top {
-  background-color: #111;
-  color: white;
-  padding: 15px 0; /* sin padding lateral acá */
-}
-
-.navbar-bottom {
   background-color: #333;
-  color: white;
-  padding: 10px 0;
+  color: #fff;
 }
+
+/* Separador visual para última opción */
+.submenu li:last-child a {
+  color: #ff5e5e;
+  font-weight: bold;
+}
+
+.submenu li:last-child a:hover {
+  background-color: #ff3b3b;
+  color: white;
+  box-shadow: 0 0 8px #ff3b3b;
+}
+
+/* Evitar que el submenu salga del viewport en pantallas pequeñas */
+@media (max-width: 600px) {
+  .submenu {
+    right: auto;
+    left: 0;
+    width: 200px;
+  }
+}
+
 
 .header-container {
   max-width: 1500px;
   margin: 0 auto;
-  padding: 0 20px; /* Opcional: un poco de espacio interno */
+  padding: 0; /* ya tiene padding en navbar-top */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-
-
-/* Centrar los links del navbar-bottom */
-.navbar-bottom .header-container {
-  justify-content: center;
-}
-
-/* Espaciado visual para separar logo de los links */
-.navbar-top .logo {
-  margin-right: auto;
-}
-
-.logo{
-  text-decoration: none;
-  color: inherit;
-}
-
-
-
 
 
 
