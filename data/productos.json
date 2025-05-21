@@ -82,5 +82,53 @@
       "Ofertas"
     ],
     "coleccion": "novedades"
+  },
+  {
+    "id": 12,
+    "nombre": "Motor horizontal Kohler SH265-0011",
+    "precio": 404020,
+    "imagen": "/uploads/1747781001499-542970651-1039065.png",
+    "descripcion": "El motor SH265, de 6.5 HP, tiene un diseño confiable y de larga vida. Con un arranque fácil y rápido. De un sencillo mantenimiento y con un sistema de apagado automático por bajo nivel de aceite. Posee un desempeño de alta potencia y un funcionamiento silencioso y sin perturbaciones.",
+    "marca": "KOHLER",
+    "etiquetas": [
+      "Motores"
+    ],
+    "coleccion": "Herramientas"
+  },
+  {
+    "id": 13,
+    "nombre": "Soldadora inverter MMA Niwa MMA-120-EX",
+    "precio": 231430,
+    "imagen": "/uploads/1747783741622-866198739-1400120.png",
+    "descripcion": "Equipo compacto, muy liviano y fácil de transportar, permite soldar con electrodos de hasta 3.2 mm del tipo 6013/7018. Ideal para las personas que le gustan reparar todo, y tiene un pequeño taller en su casa.",
+    "marca": "NIWA",
+    "etiquetas": [
+      "Soldadoras"
+    ],
+    "coleccion": "Herramientas"
+  },
+  {
+    "id": 14,
+    "nombre": "Aceite Husqvarna de 2T LS+ 1L con dosificador",
+    "precio": 18220,
+    "imagen": "/uploads/1747785426878-895414197-image666096adcb165-8037002.png",
+    "descripcion": "Su bajo nivel de emisión de humo lo hace ideal para usar en motosierras y desbrozadoras con cilindros de hasta 55 cm3, especialmente en áreas urbanas. Además, lubrica eficazmente las partes del motor que soportan más presión, como el cojinete de biela, y reduce la temperatura del motor, alargando su duración.",
+    "marca": "HUSQVARNA",
+    "etiquetas": [
+      "Aceites"
+    ],
+    "coleccion": "Ofertas"
+  },
+  {
+    "id": 15,
+    "nombre": "Programador de riego Gardena Flex",
+    "precio": 127070,
+    "imagen": "/uploads/1747786354519-847076477-0189020.png",
+    "descripcion": "Con el programador de riego GARDENA Flex , podrás controlar el riego en balcones, terrazas o patios de forma automática. Funciona con batería y se puede conectar directamente al grifo. Se inicia con un rotador externo para la selección de datos y un botón de confirmación.",
+    "marca": "GARDENA",
+    "etiquetas": [
+      "Riego"
+    ],
+    "coleccion": "Ofertas"
   }
 ]

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/ofertas.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+<%- include('../partials/header') %>
+
+
+<main class="ofertas-seccion">
+  <h2 class="titulo-ofertas">
+    <i class="fas fa-tags"></i> Ofertas imperdibles
+  </h2>
+
+  <% for (let etiqueta in productosPorEtiqueta) { %>
+    <section class="etiqueta-section">
+      <h3 class="etiqueta-titulo">
+        <i class="fas fa-star"></i> <%= etiqueta %>
+      </h3>
+      <div class="ofertas-grid">
+        <% productosPorEtiqueta[etiqueta].forEach(producto => { %>
+          <div class="oferta-card">
+            <div class="img-wrapper">
+              <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
+              <span class="descuento-badge">
+                <i class="fas fa-fire"></i> ¡Oferta!
+              </span>
+            </div>
+            <div class="oferta-info">
+              <h4><%= producto.nombre %></h4>
+              <p><strong>Precio:</strong> $<%= producto.precio %></p>
+              <a href="/products/<%= producto.id %>" class="btn-ver">
+                Ver producto <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+  <% } %>
+</main>
+
+
+
+
+
+
+<%- include('../partials/footer') %>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

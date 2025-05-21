@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="/css/contacto.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <main class="contacto-main">
+    <section class="formulario-contacto">
+      <h1><i class="fas fa-envelope"></i> Contactanos</h1>
+      <form id="form-contacto" action="/api/contacto" method="POST">
+        <div class="campo">
+          <label for="nombre"><i class="fas fa-user"></i> Nombre completo</label>
+          <input type="text" name="nombre" id="nombre" required>
+        </div>
+
+        <div class="campo">
+          <label for="email"><i class="fas fa-envelope"></i> Correo electrónico</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+
+        <div class="campo">
+          <label for="provincia"><i class="fas fa-map-marker-alt"></i> Provincia</label>
+          <select name="provincia" id="provincia" required>
+            <option value="">Seleccioná una provincia</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="localidad"><i class="fas fa-city"></i> Localidad</label>
+          <select name="localidad" id="localidad" required disabled>
+            <option value="">Seleccioná una localidad</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="mensaje"><i class="fas fa-comment-dots"></i> Tu mensaje</label>
+          <textarea name="mensaje" id="mensaje" rows="5" required></textarea>
+        </div>
+
+        <div class="campo">
+          <button type="submit"><i class="fas fa-paper-plane"></i> Enviar</button>
+        </div>
+      </form>
+
+      <div id="mensaje-exito" style="display:none;">
+        <p><i class="fas fa-check-circle"></i> ¡Mensaje enviado con éxito!</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // API de provincias y localidades (Argentina.gob.ar)
+    async function cargarProvincias() {
+      const res = await fetch('https://apis.datos.gob.ar/georef/api/provincias');
+      const data = await res.json();
+      const provinciaSelect = document.getElementById('provincia');
+      data.provincias.forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p.nombre;
+        opt.textContent = p.nombre;
+        provinciaSelect.appendChild(opt);
+      });
+    }
+
+    async function cargarLocalidades(provincia) {
+      const localidadSelect = document.getElementById('localidad');
+      localidadSelect.innerHTML = '<option value="">Cargando localidades...</option>';
+      localidadSelect.disabled = true;
+
+      const res = await fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${encodeURIComponent(provincia)}&max=1000`);
+      const data = await res.json();
+
+      localidadSelect.innerHTML = '<option value="">Seleccioná una localidad</option>';
+      data.localidades.forEach(l => {
+        const opt = document.createElement('option');
+        opt.value = l.nombre;
+        opt.textContent = l.nombre;
+        localidadSelect.appendChild(opt);
+      });
+      localidadSelect.disabled = false;
+    }
+
+    document.getElementById('provincia').addEventListener('change', function () {
+      const provincia = this.value;
+      if (provincia) cargarLocalidades(provincia);
+    });
+
+    document.getElementById('form-contacto').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form));
+
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        form.reset();
+        document.getElementById('mensaje-exito').style.display = 'block';
+      }
+    });
+
+    cargarProvincias();
+  </script>
+</body>
+</html>

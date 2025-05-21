@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/novedades.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+
+<main class="novedades-main">
+  <h1 class="titulo-novedades"><i class="fas fa-bolt"></i> Novedades</h1>
+
+  <div class="productos-grid">
+    <% productos.forEach(producto => { %>
+      <div class="producto-card">
+        <div class="img-wrapper">
+          <span class="etiqueta-nuevo"><i class="fas fa-star"></i> Nuevo</span>
+          <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
+        </div>
+        <h3><%= producto.nombre %></h3>
+        <p class="precio">$<%= producto.precio %></p>
+        <a href="/productos/<%= producto.id %>" class="btn-detalle">Ver detalle</a>
+      </div>
+    <% }); %>
+  </div>
+</main>
+
+
+
+
+  <%- include('../partials/footer') %>
+
+
+
+
+
+
+
+    <script>
+      function toggleMenu() {
+        const submenu = document.getElementById('submenu');
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      }
+    
+      // Ocultar el menú si se hace clic afuera
+      document.addEventListener('click', function(event) {
+        const menu = document.querySelector('.menu-cuenta');
+        const submenu = document.getElementById('submenu');
+    
+        if (!menu.contains(event.target)) {
+          submenu.style.display = 'none';
+        }
+      });
+    </script>
+    
+
+
+
+</body>
+</html>
