@@ -35,6 +35,8 @@ INSERT INTO products (nombre, descripcion, precio, imagen, stock, category_id, b
 ('Caja de herramientas completa', 'Incluye 50 piezas esenciales.', 30000.00, '/images/caja.jpg', 10, 3, 3), -- Bosch
 ('Juego de destornilladores', 'Set de 6 destornilladores con mango ergonómico.', 6000.00, '/images/destornilladores.jpg', 30, 2, 4); -- Tramontina
 
+
+
 -- Asignar etiquetas a productos (product_tags)
 INSERT INTO product_tags (product_id, tag_id) VALUES
 (1, 1), -- Martillo → Herramientas manuales
@@ -45,3 +47,14 @@ INSERT INTO product_tags (product_id, tag_id) VALUES
 (3, 6), -- Caja herramientas → Edición limitada
 (4, 1), -- Destornilladores → Herramientas manuales
 (4, 4); -- Destornilladores → Promoción
+
+
+-- Tabla de marcas
+CREATE TABLE brands (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- Asegurate también de que la tabla products tenga esta columna:
+-- brand_id INT,
+-- FOREIGN KEY (brand_id) REFERENCES brands(id)

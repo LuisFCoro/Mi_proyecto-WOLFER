@@ -119,12 +119,12 @@ module.exports = {
 
     const usuario = usuarios.find(u => u.email === email && u.password === password);
 
-    if (!usuario) {
-      return res.send('Credenciales inválidas');
-    }
+  if (!usuario) {
+  return res.status(401).json({ ok: false, mensaje: 'Credenciales inválidas' });
+}
 
     req.session.usuarioLogueado = usuario;
-    res.redirect('/');
+    return res.json({ ok: true });
   },
 
   logout: (req, res) => {

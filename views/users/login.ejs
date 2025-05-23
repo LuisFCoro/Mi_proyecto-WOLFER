@@ -1,10 +1,82 @@
-<h2>Iniciar Sesión</h2>
-<form method="POST" action="/users/login">
-    <label>Email:</label>
-    <input type="email" name="email" required>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registro de Usuario</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+<body>
 
-    <label>Contraseña:</label>
-    <input type="password" name="password" required>
 
-    <button type="submit">Ingresar</button>
-</form>
+  <%- include('../partials/header') %>
+
+
+
+
+
+  <main class="login-main">
+  <section class="login-container">
+    <h2><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</h2>
+
+    <!-- 🟥 Contenedor para mensajes -->
+    <div id="mensaje-error" class="alerta-error" style="display: none;"></div>
+
+    <form id="form-login" class="login-form">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="password">Contraseña:</label>
+      <input type="password" name="password" id="password" required>
+
+      <button type="submit" class="btn-login">
+        <i class="fas fa-arrow-right"></i> Ingresar
+      </button>
+    </form>
+  </section>
+</main>
+
+
+
+
+
+
+
+  <%- include('../partials/footer') %>
+
+
+  <script>
+  const formLogin = document.getElementById('form-login');
+  const mensajeError = document.getElementById('mensaje-error');
+
+  formLogin.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const datos = {
+      email: formLogin.email.value,
+      password: formLogin.password.value
+    };
+
+    const respuesta = await fetch('/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(datos)
+    });
+
+    const resultado = await respuesta.json();
+
+    if (respuesta.ok && resultado.ok) {
+      window.location.href = '/'; // ✅ Redirige al home si todo está bien
+    } else {
+      mensajeError.innerText = resultado.mensaje || 'Credenciales incorrectas.';
+      mensajeError.style.display = 'block';
+    }
+  });
+</script>
+
+
+</body>
+</html>
