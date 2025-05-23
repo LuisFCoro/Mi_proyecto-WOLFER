@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/preguntasFrecuentes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <%- include('partials/header') %>
+
+<main class="faq-section">
+  <section class="faq-header">
+    <h1><i class="fas fa-question-circle"></i> Preguntas Frecuentes</h1>
+    <p>Encontrá respuestas a las dudas más comunes sobre nuestros productos y servicios.</p>
+  </section>
+
+  <section class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Realizan envíos a todo el país? <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Sí, hacemos envíos a todo el país a través de correo y transportes. También podés retirar en nuestros locales.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Qué medios de pago aceptan? <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Aceptamos tarjetas de crédito, débito, transferencias bancarias y Mercado Pago.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Tienen garantía los productos? <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Sí, todos nuestros productos cuentan con garantía oficial. La duración varía según el fabricante.</p>
+      </div>
+    </div>
+    
+    <!-- Agregá más preguntas si querés -->
+  </section>
+</main>
+
+
+  <%- include('partials/footer') %>
+
+
+
+
+
+
+
+    <script>
+      function toggleMenu() {
+        const submenu = document.getElementById('submenu');
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      }
+    
+      // Ocultar el menú si se hace clic afuera
+      document.addEventListener('click', function(event) {
+        const menu = document.querySelector('.menu-cuenta');
+        const submenu = document.getElementById('submenu');
+    
+        if (!menu.contains(event.target)) {
+          submenu.style.display = 'none';
+        }
+      });
+    </script>
+    
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
+
+</body>
+</html>

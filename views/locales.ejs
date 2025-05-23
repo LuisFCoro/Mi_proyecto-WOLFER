@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/locales.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <%- include('partials/header') %>
+
+<main class="locales">
+  <section class="intro-locales">
+    <h1><i class="fas fa-map-marked-alt"></i> Nuestras Sucursales</h1>
+    <p>En <strong>WOLFER</strong> trabajamos para estar cerca tuyo. Descubrí nuestras tiendas distribuidas estratégicamente para brindarte la mejor atención personalizada.</p>
+  </section>
+
+  <section class="mapa">
+    <h2><i class="fas fa-map-pin"></i> Ubicación General</h2>
+    <div class="mapa-contenedor">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26272.41143504162!2d-58.482816984375!3d-34.60286099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca0f37516583%3A0xf3ae32718fe2667f!2sFerreteria%20El%20Nono!5e0!3m2!1ses!2sar!4v1747380522679!5m2!1ses!2sar" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen 
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <section class="sucursales">
+    <h2><i class="fas fa-store"></i> Sucursales por Provincia</h2>
+    <div class="sucursal-lista">
+      <div class="sucursal">
+        <h3><i class="fas fa-map-marker-alt"></i> Buenos Aires - CABA</h3>
+        <p><strong>Dirección:</strong> Av. Corrientes 1234</p>
+        <p><strong>Teléfono:</strong> (011) 5555-1234</p>
+        <p><strong>Horario:</strong> Lun a Sab de 9:00 a 18:00</p>
+      </div>
+
+      <div class="sucursal">
+        <h3><i class="fas fa-map-marker-alt"></i> Córdoba - Capital</h3>
+        <p><strong>Dirección:</strong> Bv. San Juan 567</p>
+        <p><strong>Teléfono:</strong> (0351) 456-7890</p>
+        <p><strong>Horario:</strong> Lun a Sab de 9:00 a 18:00</p>
+      </div>
+
+      <div class="sucursal">
+        <h3><i class="fas fa-map-marker-alt"></i> Santa Fe - Rosario</h3>
+        <p><strong>Dirección:</strong> Calle San Martín 222</p>
+        <p><strong>Teléfono:</strong> (0341) 123-4567</p>
+        <p><strong>Horario:</strong> Lun a Sab de 9:00 a 18:00</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto-locales">
+    <a href="/contacto" class="btn-locales"><i class="fas fa-envelope"></i> Escribinos</a>
+  </section>
+</main>
+
+
+  <%- include('partials/footer') %>
+
+
+
+
+
+
+
+    <script>
+      function toggleMenu() {
+        const submenu = document.getElementById('submenu');
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      }
+    
+      // Ocultar el menú si se hace clic afuera
+      document.addEventListener('click', function(event) {
+        const menu = document.querySelector('.menu-cuenta');
+        const submenu = document.getElementById('submenu');
+    
+        if (!menu.contains(event.target)) {
+          submenu.style.display = 'none';
+        }
+      });
+    </script>
+    
+
+
+
+</body>
+</html>

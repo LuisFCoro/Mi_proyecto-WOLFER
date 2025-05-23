@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/envios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <%- include('partials/header') %>
+<main class="envios-container">
+  <section class="envios-header">
+    <h1><i class="fas fa-truck"></i> Envíos y Políticas</h1>
+    <p>Conocé nuestras condiciones, tiempos y zonas de entrega 🛠️</p>
+  </section>
+
+  <section class="envios-info">
+    <article>
+      <h2><i class="fas fa-clock"></i> Tiempos de entrega</h2>
+      <p>Los pedidos se procesan dentro de las 24 hs hábiles luego de la confirmación de pago. Los envíos dentro de la ciudad se realizan en 24 a 48 hs hábiles. Envíos nacionales demoran entre 3 y 7 días hábiles.</p>
+    </article>
+
+    <article>
+      <h2><i class="fas fa-map-marker-alt"></i> Zonas de cobertura</h2>
+      <p>Realizamos envíos en todo el país mediante correo o servicios de logística. También podés retirar tu pedido en nuestros locales habilitados.</p>
+    </article>
+
+    <article>
+      <h2><i class="fas fa-shield-alt"></i> Políticas de envío</h2>
+      <ul>
+        <li>✔️ Todos los productos viajan asegurados.</li>
+        <li>✔️ El cliente debe verificar el paquete al recibirlo.</li>
+        <li>✔️ Si hay algún daño o diferencia, debe ser informado dentro de las 48 hs.</li>
+        <li>✔️ No nos responsabilizamos por demoras ajenas al servicio logístico.</li>
+      </ul>
+    </article>
+  </section>
+</main>
+
+
+  <%- include('partials/footer') %>
+
+
+
+
+
+
+
+    <script>
+      function toggleMenu() {
+        const submenu = document.getElementById('submenu');
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      }
+    
+      // Ocultar el menú si se hace clic afuera
+      document.addEventListener('click', function(event) {
+        const menu = document.querySelector('.menu-cuenta');
+        const submenu = document.getElementById('submenu');
+    
+        if (!menu.contains(event.target)) {
+          submenu.style.display = 'none';
+        }
+      });
+    </script>
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/devoluciones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <%- include('partials/header') %>
+
+
+
+
+
+  <main class="devoluciones-container">
+  <section class="devoluciones-header">
+    <h1><i class="fas fa-undo-alt"></i> Política de Devoluciones</h1>
+    <p>En Wolfer, tu satisfacción está garantizada 🛡️</p>
+  </section>
+
+  <section class="devoluciones-info">
+    <article>
+      <h2><i class="fas fa-box-open"></i> ¿Qué productos puedo devolver?</h2>
+      <p>Pueden devolverse todos los productos que no hayan sido usados y estén en su empaque original. El plazo máximo es de 10 días hábiles desde la recepción del pedido.</p>
+    </article>
+
+    <article>
+      <h2><i class="fas fa-file-invoice-dollar"></i> ¿Cómo se realiza el reembolso?</h2>
+      <p>Una vez recibido y revisado el producto, realizamos el reintegro del dinero por el mismo medio de pago utilizado o brindamos un cupón de compra según el caso.</p>
+    </article>
+
+    <article>
+      <h2><i class="fas fa-exclamation-triangle"></i> ¿Qué productos no tienen devolución?</h2>
+      <ul>
+        <li>❌ Herramientas eléctricas usadas o sin caja original</li>
+        <li>❌ Insumos industriales abiertos o con sellos rotos</li>
+        <li>❌ Productos comprados en promoción de liquidación</li>
+      </ul>
+    </article>
+
+    <article>
+      <h2><i class="fas fa-envelope"></i> ¿Cómo solicito una devolución?</h2>
+      <p>Envianos un mail a <strong>atencion@wolfer.com</strong> con el número de pedido y el motivo de la devolución. Te responderemos en menos de 48 hs hábiles con las instrucciones.</p>
+    </article>
+  </section>
+</main>
+
+
+  <%- include('partials/footer') %>
+
+
+
+
+
+
+
+    <script>
+      function toggleMenu() {
+        const submenu = document.getElementById('submenu');
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      }
+    
+      // Ocultar el menú si se hace clic afuera
+      document.addEventListener('click', function(event) {
+        const menu = document.querySelector('.menu-cuenta');
+        const submenu = document.getElementById('submenu');
+    
+        if (!menu.contains(event.target)) {
+          submenu.style.display = 'none';
+        }
+      });
+    </script>
+    
+
+
+
+</body>
+</html>

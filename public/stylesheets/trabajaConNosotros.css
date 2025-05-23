@@ -1,0 +1,83 @@
+.trabaja-nosotros {
+  background-color: #fff;
+  color: #222;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.trabaja-nosotros h1,
+.trabaja-nosotros h2 {
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.trabaja-nosotros strong {
+  color: #000;
+}
+
+.trabaja-nosotros .intro p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.valores ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.valores li {
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  color: #444;
+}
+
+.valores i {
+  color: #000;
+  margin-right: 0.5rem;
+}
+
+.formulario form {
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.formulario .campo {
+  margin-bottom: 1rem;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.formulario button {
+  background: #111;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.formulario button:hover {
+  background: #333;
+}

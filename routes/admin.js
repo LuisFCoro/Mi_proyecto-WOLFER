@@ -65,4 +65,5 @@ router.get('/mis-permisos', (req, res) => res.render('admin/permisos'));
 // Configuración
 router.get('/configuracion', (req, res) => res.render('admin/configuracion'));
 
+
 module.exports = router;

@@ -1,0 +1,61 @@
+.locales {
+  padding: 2rem;
+  background-color: #fff;
+  color: #222;
+}
+
+.locales h1, .locales h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.intro-locales p {
+  font-size: 1.1rem;
+  max-width: 700px;
+}
+
+.mapa-contenedor {
+  margin: 1rem 0 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.sucursal-lista {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.sucursal {
+  background: #f8f8f8;
+  padding: 1.2rem;
+  border: 1px solid #ddd;
+  border-left: 5px solid #007bff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.sucursal h3 {
+  margin-bottom: 0.5rem;
+  color: #007bff;
+}
+
+.contacto-locales {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.btn-locales {
+  background: #007bff;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-locales:hover {
+  background: #0056b3;
+}

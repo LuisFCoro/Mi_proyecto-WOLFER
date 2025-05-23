@@ -1,0 +1,56 @@
+.envios-container {
+  padding: 40px;
+  background-color: #f9f9f9;
+  color: #222;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.envios-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.envios-header h1 {
+  font-size: 2.5em;
+  color: #111;
+}
+
+.envios-header p {
+  font-size: 1.1em;
+  color: #666;
+}
+
+.envios-info article {
+  background-color: #fff;
+  border-left: 5px solid #333;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.envios-info h2 {
+  color: #000;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.envios-info p, .envios-info ul {
+  color: #444;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.envios-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.envios-info li {
+  margin-bottom: 10px;
+}
+
+.fas {
+  color: #333;
+  margin-right: 8px;
+}

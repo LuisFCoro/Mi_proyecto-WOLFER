@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/sobreNosotros.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <%- include('partials/header') %>
+
+<main class="sobre-nosotros">
+  <section class="intro">
+    <div class="contenido">
+      <h1><i class="fas fa-industry"></i> <span class="logo-text">WOLFER</span></h1>
+      <p>En <strong>WOLFER</strong> somos más que una tienda. Nos dedicamos a brindar soluciones integrales en herramientas, maquinaria e insumos industriales para profesionales exigentes.</p>
+    </div>
+  </section>
+
+  <section class="valores">
+    <h2><i class="fas fa-tools"></i> ¿Qué nos diferencia?</h2>
+    <div class="valores-grid">
+      <div class="valor">
+        <i class="fas fa-user-tie fa-2x"></i>
+        <h3>Atención Personalizada</h3>
+        <p>Escuchamos tus necesidades y brindamos asesoramiento técnico con calidez humana.</p>
+      </div>
+      <div class="valor">
+        <i class="fas fa-cogs fa-2x"></i>
+        <h3>Orientación Profesional</h3>
+        <p>Nos especializamos en acompañar a trabajadores, técnicos y empresas industriales.</p>
+      </div>
+      <div class="valor">
+        <i class="fas fa-warehouse fa-2x"></i>
+        <h3>Amplio Stock</h3>
+        <p>Contamos con una amplia gama de productos de primeras marcas para cada desafío.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mision">
+    <h2><i class="fas fa-bullseye"></i> Nuestra Misión</h2>
+    <p>Ser el aliado estratégico de cada profesional y empresa que busca calidad, durabilidad y servicio en herramientas industriales.</p>
+  </section>
+
+  <section class="llamado">
+    <h2><i class="fas fa-handshake"></i> ¡Estamos para ayudarte!</h2>
+    <p>Visitá nuestras sucursales o contactanos para encontrar lo que necesitás.</p>
+    <a href="/contacto" class="btn-sobre-nosotros">Contactanos</a>
+  </section>
+</main>
+
+
+
+  <%- include('partials/footer') %>
+
+
+
+
+
+
+
+    <script>
+      function toggleMenu() {
+        const submenu = document.getElementById('submenu');
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      }
+    
+      // Ocultar el menú si se hace clic afuera
+      document.addEventListener('click', function(event) {
+        const menu = document.querySelector('.menu-cuenta');
+        const submenu = document.getElementById('submenu');
+    
+        if (!menu.contains(event.target)) {
+          submenu.style.display = 'none';
+        }
+      });
+    </script>
+    
+
+
+
+</body>
+</html>

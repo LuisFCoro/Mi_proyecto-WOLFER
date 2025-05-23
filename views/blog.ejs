@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFER | Inicio</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <%- include('partials/header') %>
+
+<main class="blog-section">
+  <section class="blog-header">
+    <h1><i class="fas fa-newspaper"></i> Blog WOLFER</h1>
+    <p>Noticias, novedades y consejos sobre herramientas e insumos industriales.</p>
+  </section>
+
+  <section class="blog-list">
+    <article class="blog-card">
+      <img src="/images/blog1.jpg" alt="Imagen blog">
+      <div class="blog-content">
+        <h2><a href="#">¿Cómo elegir la mejor amoladora?</a></h2>
+        <p>Te contamos los factores clave para elegir la herramienta ideal según el uso industrial o doméstico...</p>
+        <a href="#" class="leer-mas">Leer más <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <img src="/images/blog2.jpg" alt="Imagen blog">
+      <div class="blog-content">
+        <h2><a href="#">Seguridad en el taller: elementos esenciales</a></h2>
+        <p>Conocé los insumos imprescindibles para mantener tu equipo de trabajo protegido y cumplir normas de seguridad.</p>
+        <a href="#" class="leer-mas">Leer más <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+    
+    <!-- Podés repetir más artículos... -->
+  </section>
+</main>
+
+
+  <%- include('partials/footer') %>
+
+
+
+
+
+
+
+    <script>
+      function toggleMenu() {
+        const submenu = document.getElementById('submenu');
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      }
+    
+      // Ocultar el menú si se hace clic afuera
+      document.addEventListener('click', function(event) {
+        const menu = document.querySelector('.menu-cuenta');
+        const submenu = document.getElementById('submenu');
+    
+        if (!menu.contains(event.target)) {
+          submenu.style.display = 'none';
+        }
+      });
+    </script>
+    
+
+
+
+</body>
+</html>
