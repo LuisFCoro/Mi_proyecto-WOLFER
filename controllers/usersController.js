@@ -4,7 +4,6 @@ const usersPath = path.join(__dirname, '../data/users.json');
 
 
 
-
 const leerUsuarios = () => {
   if (!fs.existsSync(usersPath)) {
     // Si no existe el archivo, retornamos un array vacío

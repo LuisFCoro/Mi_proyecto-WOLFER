@@ -6,6 +6,7 @@ const productsController = require('../controllers/productsController');
 
 
 
+
 // Aqui las rutas
 router.get('/', productsController.index);
 

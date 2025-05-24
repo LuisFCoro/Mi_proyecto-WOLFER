@@ -1,17 +1,5 @@
 [
   {
-    "id": 5,
-    "nombre": "Robot cortacésped Gardena SILENO minimo, 500m²",
-    "precio": 2534610,
-    "imagen": "/uploads/1747620497295-420899934-1520259.png",
-    "descripcion": "Un pequeño y potente ayudante de jardín silencioso, versátil e inteligente: así es el robot cortacésped SILENO minimo 500 m² de GARDENA. El SILENO minimo es ideal para céspedes pequeños, ya que combina alto rendimiento y precisión con un corte cómodo. ¡Empecemos! Tome su teléfono inteligente y use la aplicación GARDENA Bluetooth® para ingresar el tamaño del césped, los días de corte deseados y la hora de inicio preferida.",
-    "marca": "GARDENA",
-    "etiquetas": [
-      "Ofertas"
-    ],
-    "coleccion": "novedades"
-  },
-  {
     "id": 6,
     "nombre": "Tijera Gardena PremiumCut-Flex Verde",
     "precio": 32910,
@@ -116,18 +104,6 @@
     "marca": "HUSQVARNA",
     "etiquetas": [
       "Aceites"
-    ],
-    "coleccion": "Ofertas"
-  },
-  {
-    "id": 15,
-    "nombre": "Programador de riego Gardena Flex",
-    "precio": 127070,
-    "imagen": "/uploads/1747786354519-847076477-0189020.png",
-    "descripcion": "Con el programador de riego GARDENA Flex , podrás controlar el riego en balcones, terrazas o patios de forma automática. Funciona con batería y se puede conectar directamente al grifo. Se inicia con un rotador externo para la selección de datos y un botón de confirmación.",
-    "marca": "GARDENA",
-    "etiquetas": [
-      "Riego"
     ],
     "coleccion": "Ofertas"
   }

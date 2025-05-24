@@ -4,6 +4,9 @@ const adminController = require('../controllers/adminController');
 const multer = require('multer');
 
 
+const productValidator = require('../validators/productValidator');
+
+
 
 
 // Configuración de multer para guardar imágenes
@@ -44,10 +47,10 @@ const upload = multer({ storage });
 // Productos
 router.get('/products', adminController.index); // lista
 router.get('/products/create', adminController.create); // form crear
-router.post('/products', upload.single('imagenFile'), adminController.store); // guardar nuevo producto con multer
+router.post('/products', upload.single('imagenFile'), productValidator, adminController.store); // guardar nuevo producto con multer
 router.get('/products/:id', adminController.show); // detalle
 router.get('/products/:id/edit', adminController.edit); // form editar
-router.post('/products/:id', upload.single('imagenFile'), adminController.update); // guardar cambios
+router.post('/products/:id', upload.single('imagenFile'), productValidator, adminController.update); // guardar cambios
 router.post('/products/:id/delete', adminController.destroy); // eliminar
 router.post('/products/delete-multiple', adminController.destroyMultiple);
 

@@ -4,6 +4,13 @@ const path = require('path');
 const multer = require('multer');
 const usersController = require('../controllers/usersController');
 
+
+const registerValidator = require('../validators/registerValidator');
+const loginValidator = require('../validators/loginValidator');
+
+
+
+
 // === Configuración de Multer para subir avatar ===
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -30,13 +37,15 @@ const upload = multer({
 
 // Registro
 router.get('/register', usersController.registerForm);
-router.post('/register', upload.single('avatar'), usersController.register);
+router.post('/register',registerValidator, upload.single('avatar'), usersController.register);
 
 // Login
 router.get('/login', usersController.loginForm);
-router.post('/login', usersController.login);
+router.post('/login',loginValidator, usersController.login);
 
 // Logout
 router.get('/logout', usersController.logout);
 
 module.exports = router;
+
+
